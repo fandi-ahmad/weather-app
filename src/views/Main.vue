@@ -5,7 +5,7 @@
             <button class="btn btn-primary" @click="searchBtn">search</button>
         </div>
 
-        <div class="container mt-4 d-none" id="result">
+        <div class="container mt-4" id="result" style="display: none;">
             <h3>{{ data.name }}, {{ data.country }}</h3>
             <div>
                 <span class="badge text-bg-primary">{{ data.temp }}°C</span>
@@ -24,6 +24,10 @@
                 geo coordinates:
                 <b>[{{ data.coordLat }}, {{ data.coordLon }}]</b>
             </div>
+        </div>
+
+        <div class="mt-4" id="errMsg" style="display: none;">
+            <p>ups, something wrong</p>
         </div>
     </div>
 </template>
@@ -62,9 +66,11 @@ const getData = () => {
         data.clouds = r.clouds.all
         data.coordLat = r.coord.lat
         data.coordLon = r.coord.lon
-        result.value.classList.remove('d-none')
+        result.value.style.display = 'block'
+        errMsg.value.style.display = 'none'
     }).catch((err) => {
-        alert('Something wrong!')
+        result.value.style.display = 'none'
+        errMsg.value.style.display = 'block'
     });
 }
 
@@ -75,8 +81,10 @@ const searchBtn = () => {
 }
 
 const result = ref(null)
+const errMsg = ref(null)
 
 onMounted(() => {
     result.value = document.getElementById('result')
+    errMsg.value = document.getElementById('errMsg')
 })
 </script>
