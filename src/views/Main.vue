@@ -11,10 +11,19 @@
                 <span class="badge text-bg-primary">{{ data.temp }}°C</span>
                 <span class="badge text-bg-primary ms-2">{{ data.desc }}</span>
             </div>
-            <p class="mb-2">temperatur from {{ data.tempMin }}°C to {{ data.tempMax }}°C</p>
-            <b>wind speed: {{ data.windSpeed }}</b> <br>
-            <b>clouds: {{ data.clouds }}</b> <br>
-            <b>gei coordinates: {{ data.coordLat }}, {{ data.coordLon }}</b>
+            <p class="mb-1">temperatur from <b>{{ data.tempMin }}°C</b> to <b>{{ data.tempMax }}°C</b></p>
+            <div>
+                wind speed:
+                <b>{{ data.windSpeed }} m/s</b>
+            </div>
+            <div>
+                clouds:
+                <b>{{ data.clouds }} %</b>
+            </div>
+            <div>
+                geo coordinates:
+                <b>[{{ data.coordLat }}, {{ data.coordLon }}]</b>
+            </div>
         </div>
     </div>
 </template>
