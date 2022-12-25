@@ -11,7 +11,7 @@
                 <span class="badge text-bg-primary">{{ data.temp }}°C</span>
                 <span class="badge text-bg-primary ms-2">{{ data.desc }}</span>
             </div>
-            <p class="mb-1">temperatur from <b>{{ data.tempMin }}°C</b> to <b>{{ data.tempMax }}°C</b></p>
+            <p class="mb-1">temperatur from <b>{{ data.tempMin }}&degC</b> to <b>{{ data.tempMax }}&degC</b></p>
             <div>
                 wind speed:
                 <b>{{ data.windSpeed }} m/s</b>
