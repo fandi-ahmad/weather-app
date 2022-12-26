@@ -1,0 +1,11 @@
+:root{
+    --hard-blue: #0b50b7;;
+}
+
+.bg-sky{
+    background: url(../img/sky.jpg);
+    background-size: cover;
+}
+.bg-hard-blue{
+    background-color: var(--hard-blue);
+}

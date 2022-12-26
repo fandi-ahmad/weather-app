@@ -2,14 +2,14 @@
     <div class="container pt-5">
         <div class="d-flex justify-content-between w-50 gap-2">
             <input type="search" class="form-control" v-model="data.search" placeholder="type your country here...">
-            <button class="btn btn-primary" @click="searchBtn">search</button>
+            <button class="btn btn-dark" @click="searchBtn">search</button>
         </div>
 
         <div class="container mt-4" id="result" style="display: none;">
             <h3>{{ data.name }}, {{ data.country }}</h3>
             <div>
-                <span class="badge text-bg-primary">{{ data.temp }}°C</span>
-                <span class="badge text-bg-primary ms-2">{{ data.desc }}</span>
+                <span class="badge bg-hard-blue p-2">{{ data.temp }}°C</span>
+                <span class="badge bg-hard-blue p-2 ms-2">{{ data.desc }}</span>
             </div>
             <p class="mb-1">temperatur from <b>{{ data.tempMin }}&degC</b> to <b>{{ data.tempMax }}&degC</b></p>
             <div>
@@ -35,6 +35,7 @@
 <script setup>
 import { reactive, onMounted, ref } from 'vue';
 import WeatherApp from '../api/WeatherApp.js'
+import '../assets/css/style.css'
 
 // data storage from api
 const data = reactive({
@@ -86,5 +87,7 @@ const errMsg = ref(null)
 onMounted(() => {
     result.value = document.getElementById('result')
     errMsg.value = document.getElementById('errMsg')
+    const body = document.querySelector('body')
+    body.classList.add('bg-sky')
 })
 </script>
