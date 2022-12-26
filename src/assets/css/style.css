@@ -5,6 +5,13 @@
 .bg-sky{
     background: url(../img/sky.jpg);
     background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+@media (max-width: 1020px) {
+    .bg-sky{
+        background-size: auto;
+    }
 }
 .bg-hard-blue{
     background-color: var(--hard-blue);
