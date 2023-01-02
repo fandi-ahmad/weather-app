@@ -89,5 +89,11 @@ onMounted(() => {
     errMsg.value = document.getElementById('errMsg')
     const body = document.querySelector('body')
     body.classList.add('bg-sky')
+
+    window.addEventListener('keydown', (event) => {
+        if (event.code === 'Enter') {
+            searchBtn()
+        }
+    });
 })
 </script>
