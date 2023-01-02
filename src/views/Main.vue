@@ -1,28 +1,32 @@
 <template>
-    <div class="container pt-5">
-        <div class="d-flex justify-content-between w-50 gap-2">
+    <div class="px-3 pt-5 d-flex justify-content-center flex-column">
+        <div class="d-flex justify-content-between align-items-center gap-2 m-auto size">
             <input type="search" class="form-control" v-model="data.search" placeholder="type your country here...">
-            <button class="btn btn-dark" @click="searchBtn">search</button>
+            <button class="btn btn-dark" @click="searchBtn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
         </div>
 
-        <div class="container mt-4" id="result" style="display: none;">
-            <h3>{{ data.name }}, {{ data.country }}</h3>
-            <div>
-                <span class="badge bg-hard-blue p-2">{{ data.temp }}°C</span>
-                <span class="badge bg-hard-blue p-2 ms-2">{{ data.desc }}</span>
-            </div>
-            <p class="mb-1">temperatur from <b>{{ data.tempMin }}&degC</b> to <b>{{ data.tempMax }}&degC</b></p>
-            <div>
-                wind speed:
-                <b>{{ data.windSpeed }} m/s</b>
-            </div>
-            <div>
-                clouds:
-                <b>{{ data.clouds }} %</b>
-            </div>
-            <div>
-                geo coordinates:
-                <b>[{{ data.coordLat }}, {{ data.coordLon }}]</b>
+        <div class="mt-4 p-0 m-auto size" id="result" style="display: none;">
+            <div class="weather-box w-100">
+                <h3>{{ data.name }}, {{ data.country }}</h3>
+                <div>
+                    <span class="badge bg-hard-blue p-2">{{ data.temp }}°C</span>
+                    <span class="badge bg-hard-blue p-2 ms-2">{{ data.desc }}</span>
+                </div>
+                <p class="mb-1">temperatur from <b>{{ data.tempMin }}&degC</b> to <b>{{ data.tempMax }}&degC</b></p>
+                <div>
+                    wind speed:
+                    <b>{{ data.windSpeed }} m/s</b>
+                </div>
+                <div>
+                    clouds:
+                    <b>{{ data.clouds }} %</b>
+                </div>
+                <div>
+                    geo coordinates:
+                    <b>[{{ data.coordLat }}, {{ data.coordLon }}]</b>
+                </div>
             </div>
         </div>
 

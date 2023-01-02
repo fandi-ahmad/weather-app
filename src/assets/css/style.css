@@ -16,3 +16,33 @@
 .bg-hard-blue{
     background-color: var(--hard-blue);
 }
+.weather-box{
+    width: fit-content;
+    background: linear-gradient(rgba(245, 245, 245, 0.36), rgba(214, 214, 214, 0.13));
+    border-radius: 10px;
+    padding: 20px;
+    margin: 0px;
+}
+.size{
+    width: 800px;
+}
+@media (max-width: 885px) {
+    .size{
+        width: 500px;
+    }
+}
+@media (max-width: 565px) {
+    .size{
+        width: 400px;
+    }
+}
+@media (max-width: 465px) {
+    .size{
+        width: 300px;
+    }
+}
+@media (max-width: 365px) {
+    .size{
+        width: 245px;
+    }
+}
